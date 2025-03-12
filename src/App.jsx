@@ -23,65 +23,63 @@ function App() {
 
       {/* Modal Informasi */}
       <AnimatePresence>
-        {showModal && (
-          <motion.div
-            className="fixed inset-0 bg-black backdrop-blur-md bg-opacity-50 flex justify-center items-center z-50 px-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <motion.div
-              className="bg-white p-6 rounded-lg shadow-xl lg:max-w-[60%] max-w-lg w-full text-center relative"
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              {/* Judul Modal */}
-              <h2 className="text-2xl font-bold text-red-600">
-                🔔 Penting! Cara Registrasi
-              </h2>
+  {showModal && (
+    <motion.div
+      className="fixed inset-0 bg-black backdrop-blur-md bg-opacity-50 flex justify-center items-center z-50 px-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <motion.div
+        className="bg-white p-6 rounded-lg shadow-xl lg:max-w-[60%] max-w-lg w-full text-center relative"
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.8, opacity: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        {/* Judul Modal */}
+        <h2 className="text-2xl font-bold text-red-600">
+          🔔 Penting! Cara Registrasi
+        </h2>
 
-              {/* Isi Modal */}
-              <div className="mt-4 text-gray-700 text-sm md:text-base space-y-3 text-left">
-                <p>
-                  ✅{" "}
-                  <span className="font-semibold text-sky-500">
-                    Registrasi Biodata
-                  </span>
-                  : Pilih opsi ini jika{" "}
-                  <span className="text-red-700 font-bold underline">
-                    **Anda baru pertama kali donor darah** dan **belum
-                    terdaftar** dalam sistem
-                  </span>
-                  . Silakan isi biodata lengkap agar data Anda tersimpan.
-                </p>
-                <p>
-                  ✅{" "}
-                  <span className="font-semibold text-sky-500">
-                    Registrasi Donor Darah
-                  </span>
-                  : Jika Anda{" "}
-                  <span className="text-red-700 font-bold underline">
-                    **sudah pernah donor sebelumnya**, cukup masukkan **Nomor
-                    KTP**
-                  </span>
-                  . Jika data Anda ditemukan, sistem akan menampilkan biodata
-                  yang terakhir kali tercatat dalam sistem.
-                </p>
-              </div>
+        {/* Isi Modal */}
+        <div className="mt-4 text-gray-700 text-sm md:text-base space-y-3 text-left">
+          <p>
+            ✅{" "}
+            <span className="font-semibold text-sky-500">
+              Pendaftaran Baru
+            </span>
+            : Pilih opsi ini jika{" "}
+            <span className="text-red-700 font-bold underline">
+              **Anda baru pertama kali donor darah** dan **belum terdaftar** dalam sistem
+            </span>
+            . Silakan isi biodata lengkap agar data Anda tersimpan.
+          </p>
+          <p>
+            ✅{" "}
+            <span className="font-semibold text-sky-500">
+              Donor Darah
+            </span>
+            : Jika Anda{" "}
+            <span className="text-red-700 font-bold underline">
+              **sudah pernah donor sebelumnya**, cukup masukkan **Nomor KTP**
+            </span>
+            . Jika data Anda ditemukan, sistem akan menampilkan biodata terakhir yang tercatat.
+          </p>
+        </div>
 
-              {/* Tombol Tutup */}
-              <button
-                onClick={() => setShowModal(false)}
-                className="mt-6 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition font-semibold"
-              >
-                Saya Mengerti
-              </button>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+        {/* Tombol Tutup */}
+        <button
+          onClick={() => setShowModal(false)}
+          className="mt-6 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition font-semibold"
+        >
+          Saya Mengerti
+        </button>
+      </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
 
       {/* Main Content */}
       <motion.div

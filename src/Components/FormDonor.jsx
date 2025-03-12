@@ -124,7 +124,7 @@ const FormDonor = () => {
               required
             />
           </div>
-          <Button type="submit" text="Verifikasi Data" loading={loading} />
+          <Button type="submit" text="Verifikasi KTP" loading={loading} />
         </form>
       ) : (
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">

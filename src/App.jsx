@@ -85,7 +85,7 @@ function App() {
 
       {/* Main Content */}
       <motion.div
-        className="relative flex-grow mt-12 lg:mt-16 md:mt-12 flex items-center justify-center p-4"
+        className="relative flex-grow mt-12 lg:mt-16 md:mt-12 lg:mb-3 flex items-center justify-center p-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}

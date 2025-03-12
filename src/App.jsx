@@ -5,19 +5,27 @@ import RegisterPage from "./Components/Tabs";
 import Navbar from "./Components/Navbar";
 import ScrollToTop from "./Components/ScrollToTop";
 import Footer from "./Components/footer";
+import bg from "./assets/bg.webp";
 
 function App() {
   const [showModal, setShowModal] = useState(true); // Modal muncul saat pertama kali buka
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div
+      className="relative flex flex-col min-h-screen bg-cover bg-center"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      {/* Overlay untuk memastikan teks tetap terbaca */}
+      <div className="absolute inset-0 bg-black bg-opacity-30 backdrop-blur-sm"></div>
+
+      {/* Navbar */}
       <Navbar />
 
       {/* Modal Informasi */}
       <AnimatePresence>
         {showModal && (
           <motion.div
-            className="fixed inset-0 bg-black backdrop-blur-sm bg-opacity-50 flex justify-center items-center z-50 px-4"
+            className="fixed inset-0 bg-black backdrop-blur-md bg-opacity-50 flex justify-center items-center z-50 px-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -42,7 +50,7 @@ function App() {
                     Registrasi Biodata
                   </span>
                   : Pilih opsi ini jika{" "}
-                  <span className="text-bata font-bold underline">
+                  <span className="text-red-700 font-bold underline">
                     **Anda baru pertama kali donor darah** dan **belum
                     terdaftar** dalam sistem
                   </span>
@@ -54,7 +62,7 @@ function App() {
                     Registrasi Donor Darah
                   </span>
                   : Jika Anda{" "}
-                  <span className="text-bata font-bold underline">
+                  <span className="text-red-700 font-bold underline">
                     **sudah pernah donor sebelumnya**, cukup masukkan **Nomor
                     KTP**
                   </span>
@@ -77,7 +85,7 @@ function App() {
 
       {/* Main Content */}
       <motion.div
-        className="flex-grow mt-12 lg:mt-16 md:mt-12 flex items-center justify-center bg-white p-4"
+        className="relative flex-grow mt-12 lg:mt-16 md:mt-12 flex items-center justify-center p-4"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -85,6 +93,7 @@ function App() {
         <RegisterPage />
       </motion.div>
 
+      {/* Footer */}
       <Toaster
         position="bottom-center"
         richColors

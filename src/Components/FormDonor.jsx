@@ -4,7 +4,8 @@ import { Register, ValidateKTP } from "../Services/FormRegister";
 import { AiOutlineClose } from "react-icons/ai";
 import Button from "./Button";
 import { toast } from "sonner";
-
+import Icon from "./Icon";
+import ktp from "../assets/ktp-elektronik.png"
 const FormDonor = () => {
   const [noKtp, setNoKtp] = useState("");
   const [formData, setFormData] = useState({});
@@ -88,9 +89,14 @@ const FormDonor = () => {
   return (
     <div>
       {isVerified && (
-        <h2 className="lg:text-2xl md:text-xl text-base lg:py-12 md:py-8 py-4 text-gray-700 text-center tracking-wider font-extrabold mb-4 ">
-          Form Registrasi Pendonor
-        </h2>
+        <>
+          <h2 className="lg:text-2xl md:text-xl text-base lg:pt-12 md:py-t pt-4 text-gray-700 text-center tracking-wider font-extrabold mb-4 ">
+            Form Registrasi Pendonor
+          </h2>
+          <div className="flex justify-center mb-12">
+            <Icon w={"w-32 md:w-40 lg:w-40"} />
+          </div>
+        </>
       )}
 
       {message && (
@@ -111,7 +117,10 @@ const FormDonor = () => {
       {!isVerified ? (
         <form onSubmit={handleVerify}>
           <div>
-            <label className="block mb-3 pl-1 mt-12 font-semibold text-gray-500">
+          <div className="flex justify-center mt-12 lg:mb-0 md:mb-0 mb-8">
+           <img src={ktp} alt="" className="w-40 md:w-80 lg:w-80 " />
+          </div>
+            <label className="block mb-3 pl-1  font-semibold text-gray-500">
               No KTP
             </label>
             <input

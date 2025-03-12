@@ -19,7 +19,7 @@ const RegisterPage = () => {
           }`}
           onClick={() => setActiveTab("registrasiDonor")}
         >
-          Registrasi Donor Darah
+          Donor Darah
         </button>
         <button
           className={`flex-1 p-2 transition-colors duration-300 ${
@@ -29,7 +29,7 @@ const RegisterPage = () => {
           }`}
           onClick={() => setActiveTab("registrasiData")}
         >
-          Registrasi Biodata
+          Pendaftaran Baru
         </button>
       </div>
 

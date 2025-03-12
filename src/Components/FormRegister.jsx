@@ -3,6 +3,7 @@ import { Register } from "../Services/FormRegister";
 import { toast } from "sonner";
 import Button from "./Button";
 import { AiOutlineClose } from "react-icons/ai";
+import Icon from "./Icon";
 
 const FormRegister = () => {
   const [formData, setFormData] = useState({
@@ -74,9 +75,12 @@ const FormRegister = () => {
 
   return (
     <div className="">
-      <h2 className="lg:text-2xl md:text-xl text-base lg:py-12 md:py-8 py-4 text-gray-700 text-center tracking-wider font-extrabold mb-4 ">
+      <h2 className="lg:text-2xl md:text-xl text-base lg:pt-12 md:pt-8 pt-4 text-gray-700 text-center tracking-wider font-extrabold mb-4 ">
         Form Registrasi Pendonor
       </h2>
+      <div className="flex justify-center mb-12">
+            <Icon w={"w-32 md:w-40 lg:w-40"} />
+          </div>
 
       {message && (
         <div

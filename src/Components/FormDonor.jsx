@@ -112,6 +112,7 @@ const FormDonor = () => {
             </label>
             <input
               type="text"
+              inputMode="numeric"
               name="noKtp"
               maxLength="16"
               placeholder="Masukkan No KTP"
@@ -180,6 +181,7 @@ const FormDonor = () => {
                 name="no_hp"
                 value={formData.no_hp || ""}
                 onChange={handleChange}
+                inputMode="numeric"
                 maxLength="15"
                 className="w-full p-2 border rounded-lg  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
                 required

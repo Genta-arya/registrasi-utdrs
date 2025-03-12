@@ -85,7 +85,7 @@ const FormDonor = () => {
 
   return (
     <div>
-      <h2 className="text-2xl py-8 lg:py-12 md:py-12 font-bold text-center mb-4">
+      <h2 className="lg:text-2xl md:text-xl text-base lg:py-12 md:py-8 py-4 text-gray-700 text-center tracking-wider font-extrabold mb-4 ">
         Form Registrasi Pendonor
       </h2>
 

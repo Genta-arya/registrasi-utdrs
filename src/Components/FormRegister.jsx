@@ -59,7 +59,7 @@ const FormRegister = () => {
         no_hp: "",
         pekerjaan: "",
         tanggal_lahir: "",
-        tanggal_donor_terakhir: "",
+
         bersedia_donor_puasa: "",
       });
     } catch (error) {
@@ -110,7 +110,7 @@ const FormRegister = () => {
               inputMode="numeric"
               maxLength="16"
               value={formData.no_ktp}
-              placeholder="Masukan no KTP..."
+              placeholder="Masukan no KTP"
               onChange={handleChange}
               className="w-full p-2 border rounded-lg pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
               pattern="\d*"
@@ -125,7 +125,7 @@ const FormRegister = () => {
             <input
               type="text"
               name="nama_lengkap"
-              placeholder="Masukan nama lengkap..."
+              placeholder="Masukan nama lengkap"
               value={formData.nama_lengkap}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
@@ -142,7 +142,7 @@ const FormRegister = () => {
               value={formData.alamat}
               onChange={handleChange}
               className="w-full p-2 border rounded-lg  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
-              placeholder="Masukan alamat..."
+              placeholder="Masukan alamat"
               required
               rows={2}
             ></textarea>
@@ -159,7 +159,7 @@ const FormRegister = () => {
               className="w-full p-2 border rounded-lg  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
               required
             >
-              <option value="">Pilih...</option>
+              <option value="">Pilih</option>
               <option value="L">Laki-laki</option>
               <option value="P">Perempuan</option>
             </select>
@@ -172,7 +172,7 @@ const FormRegister = () => {
             <input
               type="text"
               name="no_hp"
-              placeholder="Masukan no HP..."
+              placeholder="Masukan no HP"
               value={formData.no_hp}
               onChange={handleChange}
               inputMode="numeric"
@@ -194,7 +194,7 @@ const FormRegister = () => {
               className="w-full p-2 border rounded-lg  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
               required
             >
-              <option value="">Pilih...</option>
+              <option value="">Pilih</option>
               <option value="TNI_POLRI">TNI/POLRI</option>
               <option value="PNS_Swasta">PNS/Swasta</option>
               <option value="Petani_Buruh">Petani/Buruh</option>
@@ -217,20 +217,7 @@ const FormRegister = () => {
             />
           </div>
 
-          <div>
-            <label className="block pl-1 mb-2 font-semibold text-gray-500">
-              Tanggal Donor Terakhir (Opsional)
-            </label>
-            <input
-              type="date"
-              name="tanggal_donor_terakhir"
-              value={formData.tanggal_donor_terakhir}
-              onChange={handleChange}
-              className="w-full p-2 border rounded-lg  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
-            />
-          </div>
-
-          <div className="col-span-full">
+          <div className="">
             <label className="block pl-1 mb-2 font-semibold text-gray-500">
               Bersedia Donor Saat Puasa?
             </label>
@@ -241,7 +228,7 @@ const FormRegister = () => {
               className="w-full p-2 border rounded-lg  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
               required
             >
-              <option value="">Pilih...</option>
+              <option value="">Pilih</option>
               <option value="Ya">Ya</option>
               <option value="Tidak">Tidak</option>
             </select>

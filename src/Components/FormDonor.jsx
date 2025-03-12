@@ -235,6 +235,7 @@ const FormDonor = () => {
               <input
                 type="date"
                 name="tanggal_donor_terakhir"
+                readOnly
                 value={
                   formData.tanggal_donor_terakhir
                     ? DateTime.fromISO(

@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import RegisterPage from "./Components/Tabs";
 import Navbar from "./Components/Navbar";
 import ScrollToTop from "./Components/ScrollToTop";
-import Footer from "./Components/Footer";
+import Footer from "./Components/footer";
+
 
 function App() {
   const [showModal, setShowModal] = useState(true); // Modal muncul saat pertama kali buka

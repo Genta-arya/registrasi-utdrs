@@ -87,9 +87,11 @@ const FormDonor = () => {
 
   return (
     <div>
-      <h2 className="lg:text-2xl md:text-xl text-base lg:py-12 md:py-8 py-4 text-gray-700 text-center tracking-wider font-extrabold mb-4 ">
-        Form Registrasi Pendonor
-      </h2>
+      {isVerified && (
+        <h2 className="lg:text-2xl md:text-xl text-base lg:py-12 md:py-8 py-4 text-gray-700 text-center tracking-wider font-extrabold mb-4 ">
+          Form Registrasi Pendonor
+        </h2>
+      )}
 
       {message && (
         <div
@@ -109,7 +111,7 @@ const FormDonor = () => {
       {!isVerified ? (
         <form onSubmit={handleVerify}>
           <div>
-            <label className="block mb-3 pl-1 font-semibold text-gray-500">
+            <label className="block mb-3 pl-1 mt-12 font-semibold text-gray-500">
               No KTP
             </label>
             <input

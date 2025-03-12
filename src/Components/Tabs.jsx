@@ -8,7 +8,7 @@ const RegisterPage = () => {
   const [activeTab, setActiveTab] = useState("registrasiDonor");
 
   return (
-    <div className="border border-gray-300 w-full text-xs lg:text-base md:text-base lg:max-w-[85%] md:max-w-[95%] max-w-full mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
+    <div className="border border-gray-300 w-full text-xs lg:text-base md:text-base lg:max-w-[65%] md:max-w-[95%] max-w-full mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
       {/* Tabs Navigation */}
       <div className="flex mb-4">
         <button

@@ -32,6 +32,7 @@ const FormDonor = () => {
     e.preventDefault();
     if (noKtp.length !== 16) {
       setMessage({ type: "error", text: "No KTP harus 16 karakter!" });
+      toast.info("No KTP harus 16 karakter! ")
       return;
     }
 
@@ -52,6 +53,7 @@ const FormDonor = () => {
         type: "error",
         text: error.response?.data?.message || "Terjadi kesalahan!",
       });
+      toast.error(error.response?.data.message || "Terjadi Kesalahan")
       setIsVerified(false);
     }
 
@@ -84,6 +86,7 @@ const FormDonor = () => {
     setIsVerified(false);
     setFormData({}); // Reset form data
     setMessage(null);
+    setNoKtp(null)
   };
 
   return (
@@ -138,6 +141,22 @@ const FormDonor = () => {
           <Button type="submit" text="Verifikasi KTP" loading={loading} />
         </form>
       ) : (
+        <>
+     
+            <label className="block mb-3 pl-1  font-semibold text-gray-500">
+              No KTP
+            </label>
+            <input
+              type="text"
+              inputMode="numeric"
+              name="noKtp"
+              maxLength="16"
+              placeholder="Masukkan No KTP"
+              value={noKtp}
+        readOnly
+              className="w-full cursor-default bg-gray-100 p-2 border rounded-lg mb-8  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
+              required
+            />
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">
           <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5">
             <div>
@@ -303,6 +322,7 @@ const FormDonor = () => {
             </button>
           </div>
         </form>
+        </>
       )}
     </div>
   );

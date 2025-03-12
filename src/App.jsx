@@ -6,7 +6,6 @@ import Navbar from "./Components/Navbar";
 import ScrollToTop from "./Components/ScrollToTop";
 import Footer from "./Components/footer";
 
-
 function App() {
   const [showModal, setShowModal] = useState(true); // Modal muncul saat pertama kali buka
 
@@ -60,7 +59,7 @@ function App() {
                     KTP**
                   </span>
                   . Jika data Anda ditemukan, sistem akan menampilkan biodata
-                  yang bisa diperbarui jika ada perubahan.
+                  yang terakhir kali tercatat dalam sistem.
                 </p>
               </div>
 

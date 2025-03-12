@@ -45,6 +45,7 @@ const FormDonor = () => {
         type: "success",
         text: "Verifikasi berhasil.   Silahkan Periksa Biodata Anda",
       });
+      toast.success("Verifikasi berhasil.   Silahkan Periksa Biodata Anda");
     } catch (error) {
       setMessage({
         type: "error",
@@ -64,6 +65,7 @@ const FormDonor = () => {
     try {
       await Register(formData);
       setMessage({ type: "success", text: "Registrasi berhasil!" });
+      toast.success("Registrasi berhasil!");
       setFormData({});
       setNoKtp("");
       setIsVerified(false);

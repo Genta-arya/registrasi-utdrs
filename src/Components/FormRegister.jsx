@@ -50,6 +50,7 @@ const FormRegister = () => {
       await Register(formData);
 
       setMessage({ type: "success", text: "Registrasi berhasil!" });
+      toast.success("Registrasi berhasil!");
       setFormData({
         no_ktp: "",
         nama_lengkap: "",
@@ -60,7 +61,7 @@ const FormRegister = () => {
         tanggal_lahir: "",
         tanggal_donor_terakhir: "",
         bersedia_donor_puasa: "",
-      })
+      });
     } catch (error) {
       setMessage({
         type: "error",

@@ -9,12 +9,12 @@ const RegisterPage = () => {
   return (
     <div className=" border border-gray-300 w-full text-xs lg:text-base md:text-base lg:max-w-[85%] md:max-w-[95%] max-w-full mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
       {/* Tabs Navigation */}
-      <div className="flex border-b mb-4">
+      <div className="flex mb-4">
         <button
           className={`flex-1 p-2 transition-colors duration-300 ${
             activeTab === "registrasiData"
               ? "bg-bata text-white rounded-tl-full rounded-bl-full"
-              : "bg-gray-200 text-gray-700"
+              : "bg-gray-200 text-gray-700  rounded-tl-full rounded-bl-full"
           }`}
           onClick={() => setActiveTab("registrasiData")}
         >
@@ -24,7 +24,7 @@ const RegisterPage = () => {
           className={`flex-1 p-2 transition-colors duration-300 ${
             activeTab === "registrasiDonor"
               ? "bg-bata text-white rounded-tr-full rounded-br-full"
-              : "bg-gray-200 text-gray-700"
+              : "bg-gray-200 text-gray-700 rounded-tr-full rounded-br-full"
           }`}
           onClick={() => setActiveTab("registrasiDonor")}
         >

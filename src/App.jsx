@@ -2,25 +2,30 @@ import { Toaster } from "sonner";
 import FormRegister from "./Components/FormRegister";
 import RegisterPage from "./Components/Tabs";
 import Navbar from "./Components/Navbar";
-import Footer from "./Components/footer";
+
 import ScrollToTop from "./Components/ScrollToTop";
+import Footer from "./Components/footer";
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
+      {/* Navbar */}
       <Navbar />
-      <div className="min-h-screen lg:mt-20 md:mt-0 mt-11 p-4 w-full flex items-center justify-center bg-white">
+
+      {/* Main Content - Gunakan flex-grow untuk mengisi ruang kosong */}
+      <div className="flex-grow mt-12 lg:mt-16 md:mt-12 flex items-center justify-center bg-white p-4">
         <RegisterPage />
-        <Toaster
-          position="bottom-center"
-          richColors
-          closeButton
-          duration={3000}
-        />
       </div>
+
+      {/* Toaster Notification */}
+      <Toaster position="bottom-center" richColors closeButton duration={3000} />
+
+      {/* Scroll to Top */}
       <ScrollToTop />
+
+      {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }
 

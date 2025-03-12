@@ -4,7 +4,7 @@ import Icon from "./Icon";
 
 const Footer = () => {
   return (
-    <footer className="bg-bata text-white py-8">
+    <footer className="bg-bata text-white py-8 ">
       <div className="max-w-full mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Kolom 1: Logo & Deskripsi */}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&family=Lato:wght@400;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Lato', sans-serif;
+}
+
+
+::-webkit-scrollbar {
+    width: 8px; /* Lebar scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f5f5f5; /* Warna latar belakang track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #b22222; /* Warna merah bata */
+    border-radius: 10px; /* Membuatnya lebih bulat */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8b1c1c; /* Warna saat hover */
+  }

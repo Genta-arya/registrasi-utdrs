@@ -6,11 +6,19 @@ const Button = ({ children, onClick, text, loading, type, disabled }) => {
   const [recaptchaToken, setRecaptchaToken] = useState(null);
 
   const handleRecaptchaChange = (value) => {
-    setRecaptchaToken(value); 
+    setRecaptchaToken(value);
   };
 
   return (
     <div>
+      <div className="mb-1 mt-5 text-xs flex justify-center w-full">
+        <ReCAPTCHA
+          type="image"
+          size="normal"
+          sitekey="6Lcv3L4qAAAAAJoWWTTOuo9SubeanyIoNZ2wPKj5"
+          onChange={handleRecaptchaChange}
+        />
+      </div>
       <button
         className="bg-bata disabled:bg-gray-700 duration-300 disabled:opacity-70 mt-2 font-bold w-full py-2 rounded-lg hover:opacity-80 transition-all text-white"
         type={type}
@@ -27,15 +35,6 @@ const Button = ({ children, onClick, text, loading, type, disabled }) => {
           text
         )}
       </button>
-
-      <div className="mb-6 mt-4 text-xs flex justify-center w-full">
-        <ReCAPTCHA
-          type="image"
-          size="normal"
-          sitekey="6Lcv3L4qAAAAAJoWWTTOuo9SubeanyIoNZ2wPKj5"
-          onChange={handleRecaptchaChange}
-        />
-      </div>
     </div>
   );
 };

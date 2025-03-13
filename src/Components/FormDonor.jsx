@@ -91,6 +91,7 @@ const FormDonor = () => {
         type: "error",
         text: error.response?.data?.message || "Terjadi kesalahan!",
       });
+      toast.error(error.response?.data?.message || "Terjadi kesalahan!");
     }
 
     setLoading(false);

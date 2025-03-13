@@ -136,7 +136,7 @@ const FormDonor = () => {
             <div className="flex justify-center mt-12 lg:mb-0 md:mb-0 mb-8">
               <img src={ktp} alt="" className="w-40 md:w-80 lg:w-80 " />
             </div>
-            <label className=" mb-3 pl-1  font-semibold text-gray-500 flex gap-1">
+            <label className=" mb-3 pl-1 items-center  font-semibold text-gray-500 flex gap-1">
               <p>No KTP </p>
               <span className="text-red-500 text-xs">
                 {noKtp.length > 0 && <p className="">({0 + noKtp.length}/16)</p>}

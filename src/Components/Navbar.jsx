@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu } from "react-icons/hi";
 import Icon from "./Icon";
+import { FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -100,7 +101,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className="absolute top-4 right-4 text-gray-800 text-2xl"
             >
-              &times;
+            <FaTimes className="hover:animate-spin" />
             </button>
 
             <div className="flex items-center  gap-4 mt-12 px-3">
@@ -113,37 +114,37 @@ const Navbar = () => {
             <div className="flex flex-col items-start p-6 space-y-4 4">
               <a
                 href="#"
-                className="text-gray-600 font-medium hover:text-red-600 transition"
+                className="text-gray-600 font-medium border-b w-full border-gray-400 pb-2  hover:text-red-600 transition"
               >
                 Beranda
               </a>
               <a
                 href="#"
-                className="text-gray-600 font-medium hover:text-red-600 transition"
+                className="text-gray-600 border-b w-full border-gray-400 pb-2 font-medium hover:text-red-600 transition"
               >
                 Berita
               </a>
               <a
                 href="#"
-                className="text-gray-600 font-medium hover:text-red-600 transition"
+                className="text-gray-600 font-medium border-b w-full border-gray-400 pb-2  hover:text-red-600 transition"
               >
                 Event
               </a>
               <a
                 href="#"
-                className="text-red-700 font-semibold border-b-2 border-red-700"
+                className="text-red-700 font-semibold border-b-2 w-full pb-2 border-red-700"
               >
                 Donor
               </a>
               <a
                 href="#"
-                className="text-gray-600 font-medium hover:text-red-600 transition"
+                className="text-gray-600 font-medium border-b w-full border-gray-400 pb-2  hover:text-red-600 transition"
               >
                 Kontak
               </a>
               <a
                 href="#"
-                className="w-full text-center bg-red-600 text-white px-4 py-1 rounded-lg hover:bg-red-700 transition"
+                className="w-full text-center bg-red-600  text-white px-4 py-1 rounded-lg hover:bg-red-700 transition"
               >
                 Login
               </a>

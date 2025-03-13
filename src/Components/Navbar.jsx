@@ -18,7 +18,7 @@ const Navbar = () => {
             </p>
           </div>
 
-          <div className="hidden lg:text-xl md:text-base font-bold md:flex lg:space-x-8 md:space-x-4">
+          <div className="hidden lg:text-xl md:text-base font-bold md:flex  2xl:space-x-8 lg:space-x-5 md:space-x-4">
             <a
               href="#"  
               className="text-gray-600 font-medium hover:text-red-600 transition"

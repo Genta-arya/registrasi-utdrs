@@ -15,7 +15,6 @@ const FormDonor = () => {
   const [rememberKtp, setRememberKtp] = useState(false);
 
   useEffect(() => {
-
     const savedKtp = localStorage.getItem("savedNoKtp");
     if (savedKtp) {
       setNoKtp(savedKtp);
@@ -24,7 +23,6 @@ const FormDonor = () => {
   }, []);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-
 
     if (e.target.name === "no_hp") {
       if (!/^\d*$/.test(e.target.value)) {
@@ -99,10 +97,8 @@ const FormDonor = () => {
 
   const handleCancel = () => {
     setIsVerified(false);
-    setFormData({}); // Reset form data
+    setFormData({});
     setMessage(null);
-
-    
   };
 
   return (
@@ -174,7 +170,7 @@ const FormDonor = () => {
               htmlFor="rememberKtp"
               className="ml-2 text-sm font-medium text-gray-700"
             >
-              Ingat KTP saya
+              Simpan
             </label>
           </div>
         </form>

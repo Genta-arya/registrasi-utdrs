@@ -13,11 +13,8 @@ const ScrollToTop = () => {
       const progress = (scrollY / scrollHeight) * 100;
       setScrollProgress(progress);
 
-      if (scrollY > 100) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      // Tombol tetap muncul jika progress masih di atas 1%
+      setIsVisible(progress > 1);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -40,7 +37,7 @@ const ScrollToTop = () => {
     >
       <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 36 36">
         <circle
-          className="text-gray-300"
+          className="text-gray-600"
           stroke="currentColor"
           strokeWidth="3"
           fill="transparent"

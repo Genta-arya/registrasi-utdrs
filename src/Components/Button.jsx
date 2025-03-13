@@ -28,7 +28,7 @@ const Button = ({ children, onClick, text, loading, type, disabled }) => {
         )}
       </button>
 
-      <div className="mb-6 mt-4 text-xs flex justify-center">
+      <div className="mb-6 mt-4 text-xs flex justify-center w-full">
         <ReCAPTCHA
           type="image"
           size="normal"

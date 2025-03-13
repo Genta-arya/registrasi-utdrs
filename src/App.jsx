@@ -10,20 +10,6 @@ import bg from "./assets/bg.webp";
 function App() {
   const [showModal, setShowModal] = useState(true);
 
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    let lastScrollY = 0;
-
-    const smoothScroll = () => {
-      lastScrollY += (window.scrollY - lastScrollY) * 0.8; 
-      setScrollY(lastScrollY);
-      requestAnimationFrame(smoothScroll);
-    };
-
-    requestAnimationFrame(smoothScroll);
-  }, []);
-
   return (
     <div
       className="relative flex flex-col min-h-screen bg-cover bg-center"

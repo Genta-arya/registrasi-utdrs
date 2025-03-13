@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full bg-white  drop-shadow-md lg:py-6 md:py-4 py-4 lg:px-24  xl:px-24 2xl:px-52  md:px-0 px-1 z-10">
+      <nav className="fixed top-0 left-0 w-full bg-white border-b border-gray-500  drop-shadow-md lg:py-6 md:py-4 py-4 lg:px-24  xl:px-24 2xl:px-52  md:px-0 px-1 z-10">
         <div className="flex justify-between items-center w-full max-w-full lg:px-32 md:px-8 px-4 mx-auto">
           <div className="flex items-center  gap-2">
             <Icon w={"w-12"} />
@@ -18,9 +18,9 @@ const Navbar = () => {
             </p>
           </div>
 
-          <div className="hidden font-bold md:flex lg:space-x-8 md:space-x-4">
+          <div className="hidden lg:text-xl md:text-base font-bold md:flex lg:space-x-8 md:space-x-4">
             <a
-              href="#"
+              href="#"  
               className="text-gray-600 font-medium hover:text-red-600 transition"
             >
               Beranda
@@ -51,7 +51,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center lg:text-xl md:text-base gap-4">
             <a
               href="#"
               className="hidden md:block bg-red-600 text-white px-8 py-2 rounded-full hover:bg-red-700 transition"

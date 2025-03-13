@@ -13,7 +13,7 @@ const ScrollToTop = () => {
       const progress = (scrollY / scrollHeight) * 100;
       setScrollProgress(progress);
 
-      // Tombol tetap muncul jika progress masih di atas 1%
+      
       setIsVisible(progress > 1);
     };
 
@@ -35,31 +35,32 @@ const ScrollToTop = () => {
       }`}
       whileHover={{ scale: 1.1 }}
     >
-      <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-        <circle
-          className="text-gray-600"
-          stroke="currentColor"
-          strokeWidth="3"
-          fill="transparent"
-          r="16"
-          cx="18"
-          cy="18"
-        />
-        <motion.circle
-          className="text-white"
-          stroke="currentColor"
-          strokeWidth="3"
-          fill="transparent"
-          r="16"
-          cx="18"
-          cy="18"
-          strokeDasharray="100"
-          strokeDashoffset={`${100 - scrollProgress}`}
-          initial={{ strokeDashoffset: 100 }}
-          animate={{ strokeDashoffset: 100 - scrollProgress }}
-          transition={{ ease: "easeOut", duration: 0.2 }}
-        />
-      </svg>
+    <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+  <circle
+    className="text-gray-600"
+    stroke="currentColor"
+    strokeWidth="3"
+    fill="transparent"
+    r="16"
+    cx="18"
+    cy="18"
+  />
+  <motion.circle
+    className="text-white"
+    stroke="currentColor"
+    strokeWidth="3"
+    fill="transparent"
+    r="16"
+    cx="18"
+    cy="18"
+    strokeDasharray="100"
+    strokeDashoffset={100 - (scrollProgress * 1.2)} // Dibuat lebih proporsional
+    initial={{ strokeDashoffset: 100 }}
+    animate={{ strokeDashoffset: 100 - (scrollProgress * 1.2) }} // Dikalikan faktor agar lebih smooth
+    transition={{ ease: "linear", duration: 0.1 }} // Kurangi delay agar lebih responsif
+  />
+</svg>
+
       <FaArrowUp className="text-white text-lg relative" />
     </motion.button>
   );

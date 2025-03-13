@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Toaster } from "sonner";
 import { motion, AnimatePresence } from "framer-motion";
 import RegisterPage from "./Components/Tabs";
@@ -9,6 +9,20 @@ import bg from "./assets/bg.webp";
 
 function App() {
   const [showModal, setShowModal] = useState(true);
+
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    let lastScrollY = 0;
+
+    const smoothScroll = () => {
+      lastScrollY += (window.scrollY - lastScrollY) * 0.8; 
+      setScrollY(lastScrollY);
+      requestAnimationFrame(smoothScroll);
+    };
+
+    requestAnimationFrame(smoothScroll);
+  }, []);
 
   return (
     <div

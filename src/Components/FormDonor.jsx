@@ -23,18 +23,28 @@ const FormDonor = () => {
     }
   }, []);
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-
-    if (e.target.name === "no_hp") {
-      if (!/^\d*$/.test(e.target.value)) {
-        toast.info("Form hanya boleh diisi angka!");
+    const { name, value } = e.target;
+  
+    
+    if (name === "no_hp") {
+      const numericValue = value.replace(/\D/g, ""); 
+      if (numericValue.length > 15) {
+        toast.info("Form No HP tidak boleh lebih dari 15 angka!");
+        return;
       }
-
-      if (e.target.value.length > 15) {
-        toast.info("Form No Hp tidak boleh lebih dari 15 angka!");
-      }
+      setFormData({ ...formData, [name]: numericValue });
+      return;
     }
+  
+    setFormData({ ...formData, [name]: value });
   };
+  
+  const handleChangeKtp = (e) => {
+    const numericValue = e.target.value.replace(/\D/g, ""); 
+    if (numericValue.length > 16) return; 
+    setNoKtp(numericValue);
+  };
+  
 
   const handleVerify = async (e) => {
     e.preventDefault();
@@ -73,6 +83,7 @@ const FormDonor = () => {
     setLoading(false);
   };
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -139,7 +150,9 @@ const FormDonor = () => {
             <label className=" mb-3 pl-1 items-center  font-semibold text-gray-500 flex gap-1">
               <p>No KTP </p>
               <span className="text-red-500 text-xs">
-                {noKtp.length > 0 && <p className="">({0 + noKtp.length}/16)</p>}
+                {noKtp.length > 0 && (
+                  <p className="">({0 + noKtp.length}/16)</p>
+                )}
               </span>
             </label>
             <input
@@ -149,7 +162,8 @@ const FormDonor = () => {
               maxLength="16"
               placeholder="Masukkan 16 digit No KTP"
               value={noKtp}
-              onChange={(e) => setNoKtp(e.target.value)}
+              pattern="\d*"
+              onChange={(e) =>handleChangeKtp(e)}
               className="w-full p-2 border rounded-lg mb-8  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
               required
             />
@@ -195,6 +209,7 @@ const FormDonor = () => {
             inputMode="numeric"
             name="noKtp"
             maxLength="16"
+            pattern="\d*"
             placeholder="Masukkan No KTP"
             value={noKtp}
             readOnly
@@ -259,6 +274,7 @@ const FormDonor = () => {
                   onChange={handleChange}
                   inputMode="numeric"
                   maxLength="15"
+                  pattern="\d*"
                   className="w-full p-2 border rounded-lg  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
                   required
                 />

@@ -48,7 +48,7 @@ function App() {
               exit={{ scale: 0.8, opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="text-2xl font-bold text-red-600">
+              <h2 className="text-2xl font-bold text-bata">
                 🔔 Penting! Cara Registrasi
               </h2>
 
@@ -82,7 +82,7 @@ function App() {
 
               <button
                 onClick={() => setShowModal(false)}
-                className="mt-6 bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition font-semibold"
+                className="mt-6 bg-bata text-sm text-white px-6 py-2 rounded-lg hover:bg-red-700 transition font-semibold"
               >
                 Saya Mengerti
               </button>

@@ -169,7 +169,7 @@ const FormDonor = () => {
               required
             />
 
-<div className="flex items-center mb-6 pl-2">
+<div className="flex items-center mb-8 pl-2">
             <input
               type="checkbox"
               id="rememberKtp"

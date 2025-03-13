@@ -155,6 +155,7 @@ const FormDonor = () => {
                 )}
               </span>
             </label>
+            
             <input
               type="text"
               inputMode="numeric"
@@ -164,9 +165,30 @@ const FormDonor = () => {
               value={noKtp}
               pattern="\d*"
               onChange={(e) =>handleChangeKtp(e)}
-              className="w-full p-2 border rounded-lg mb-8  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
+              className="w-full p-2 border rounded-lg mb-3  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
               required
             />
+
+<div className="flex items-center mb-6 pl-2">
+            <input
+              type="checkbox"
+              id="rememberKtp"
+              checked={rememberKtp}
+              onChange={() => setRememberKtp(!rememberKtp)}
+              className="
+      w-4 h-4 border-2 border-red-600 rounded-sm  text-white
+      appearance-none cursor-pointer 
+      checked:bg-red-600 checked:border-red-600 
+      focus:ring-2 focus:ring-red-500 
+      "
+            />
+            <label
+              htmlFor="rememberKtp"
+              className="ml-1 text-xs font-medium text-gray-700"
+            >
+              Simpan
+            </label>
+          </div>
           </div>
 
           <div className="-mt-4">
@@ -178,26 +200,7 @@ const FormDonor = () => {
             />
           </div>
 
-          <div className="flex items-center mb-6 pl-2 mt-4">
-            <input
-              type="checkbox"
-              id="rememberKtp"
-              checked={rememberKtp}
-              onChange={() => setRememberKtp(!rememberKtp)}
-              className="
-      w-5 h-5 border-2 border-red-600 rounded-sm  text-white
-      appearance-none cursor-pointer 
-      checked:bg-red-600 checked:border-red-600 
-      focus:ring-2 focus:ring-red-500 
-      "
-            />
-            <label
-              htmlFor="rememberKtp"
-              className="ml-2 text-sm font-medium text-gray-700"
-            >
-              Simpan
-            </label>
-          </div>
+         
         </form>
       ) : (
         <>

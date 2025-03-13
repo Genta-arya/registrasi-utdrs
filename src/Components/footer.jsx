@@ -4,8 +4,10 @@ import Icon from "./Icon";
 
 const Footer = () => {
   return (
+    <>
+    
     <footer className="bg-bata text-white py-8 z-10 ">
-      <div className="max-w-full mx-auto px-6 md:px-8 lg:px-80">
+      <div className="max-w-full mx-auto px-6 md:px-8 2xl:px-80  lg:px-56 xl:px-56">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
           <div>
@@ -51,14 +53,15 @@ const Footer = () => {
           </div>
         </div>
 
+      </div>
    
-        <div className="mt-8 border-t border-gray-300 pt-4 text-center">
+        <div className="mt-8 border-t  border-gray-400 pt-4 text-center">
           <p className="text-sm text-gray-200">
             &copy; {new Date().getFullYear()} UTDRS. All rights reserved.
           </p>
         </div>
-      </div>
     </footer>
+    </>
   );
 };
 

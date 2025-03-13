@@ -2,15 +2,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FormRegister from "./FormRegister";
 import FormDonor from "./FormDonor";
+import { FaTint } from "react-icons/fa";
+import { FaPencil } from "react-icons/fa6";
 
 const RegisterPage = () => {
-
   const [activeTab, setActiveTab] = useState("registrasiDonor");
 
   return (
     <div className="border border-gray-300 w-full text-xs lg:text-base md:text-base lg:max-w-[65%] md:max-w-[95%] max-w-full mx-auto p-6 bg-white shadow-lg rounded-lg mt-10">
-
-      <div className="flex mb-4">
+      <div className="flex mb-4 font-bold">
         <button
           className={`flex-1 p-2 transition-colors duration-300 ${
             activeTab === "registrasiDonor"
@@ -19,7 +19,10 @@ const RegisterPage = () => {
           }`}
           onClick={() => setActiveTab("registrasiDonor")}
         >
-          Donor Darah
+          <div className="flex gap-2 items-center justify-center">
+            <FaTint className="text-sm" />
+            <p> Donor Darah</p>
+          </div>
         </button>
         <button
           className={`flex-1 p-2 transition-colors duration-300 ${
@@ -29,7 +32,10 @@ const RegisterPage = () => {
           }`}
           onClick={() => setActiveTab("registrasiData")}
         >
-          Pendaftaran Baru
+          <div className="flex gap-2 items-center justify-center">
+            <FaPencil className="text-sm" />
+            <p>Pendaftaran Baru</p>
+          </div>
         </button>
       </div>
 

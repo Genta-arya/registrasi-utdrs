@@ -47,7 +47,7 @@ const FormRegister = () => {
     setMessage(null);
 
     try {
-      // Kirim ke backend
+
       await Register(formData);
 
       setMessage({ type: "success", text: "Registrasi berhasil!" });

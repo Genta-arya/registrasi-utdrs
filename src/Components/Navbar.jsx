@@ -8,10 +8,10 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar Utama */}
+ 
       <nav className="fixed top-0 left-0 w-full bg-white  drop-shadow-md lg:py-6 md:py-4 py-4 lg:px-52 md:px-0 px-1 z-10">
         <div className="flex justify-between items-center w-full max-w-full lg:px-32 md:px-8 px-4 mx-auto">
-          {/* Kiri: UTDRS */}
+
           <div className="flex items-center  gap-4">
             <Icon w={"w-12"} />
             <p className="lg:text-4xl text-2xl font-extrabold text-red-700 tracking-wide">
@@ -19,7 +19,7 @@ const Navbar = () => {
             </p>
           </div>
 
-          {/* Tengah: Menu (Desktop) */}
+
           <div className="hidden font-bold md:flex lg:space-x-8 md:space-x-4">
             <a
               href="#"
@@ -53,7 +53,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          {/* Kanan: Login & Hamburger */}
+
           <div className="flex items-center gap-4">
             <a
               href="#"
@@ -61,7 +61,7 @@ const Navbar = () => {
             >
               Login
             </a>
-            {/* Tombol Hamburger (Mobile) */}
+
             <button
               onClick={() => setIsOpen(true)}
               className="md:hidden focus:outline-none"
@@ -72,7 +72,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Background Gelap Saat Sidebar Terbuka */}
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -85,7 +85,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-      {/* Sidebar Menu (Mobile) */}
+
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -95,7 +95,7 @@ const Navbar = () => {
             exit={{ x: "-100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
-            {/* Tombol Close */}
+
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-4 right-4 text-gray-800 text-2xl"
@@ -109,7 +109,7 @@ const Navbar = () => {
               UTDRS
             </p>
           </div>
-            {/* Menu Sidebar */}
+
             <div className="flex flex-col items-start p-6 space-y-4 4">
               <a
                 href="#"

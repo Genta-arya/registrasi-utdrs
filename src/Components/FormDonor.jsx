@@ -15,7 +15,7 @@ const FormDonor = () => {
   const [rememberKtp, setRememberKtp] = useState(false);
 
   useEffect(() => {
-    // Ambil No KTP dari localStorage jika ada
+
     const savedKtp = localStorage.getItem("savedNoKtp");
     if (savedKtp) {
       setNoKtp(savedKtp);
@@ -25,7 +25,7 @@ const FormDonor = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    // no hp tidak boleh lebih dari 15 dan berupa angka
+
     if (e.target.name === "no_hp") {
       if (!/^\d*$/.test(e.target.value)) {
         toast.info("Form hanya boleh diisi angka!");

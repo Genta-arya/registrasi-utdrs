@@ -46,7 +46,7 @@ const ScrollToTop = () => {
           cy="18"
         />
         <motion.circle
-          className="text-yellow-400"
+          className="text-white"
           stroke="currentColor"
           strokeWidth="3"
           fill="transparent"

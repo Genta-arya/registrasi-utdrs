@@ -6,6 +6,7 @@ import Button from "./Button";
 import { toast } from "sonner";
 import Icon from "./Icon";
 import ktp from "../assets/ktp-elektronik.png";
+import { p } from "framer-motion/client";
 const FormDonor = () => {
   const [noKtp, setNoKtp] = useState("");
   const [formData, setFormData] = useState({});
@@ -135,15 +136,18 @@ const FormDonor = () => {
             <div className="flex justify-center mt-12 lg:mb-0 md:mb-0 mb-8">
               <img src={ktp} alt="" className="w-40 md:w-80 lg:w-80 " />
             </div>
-            <label className="block mb-3 pl-1  font-semibold text-gray-500">
-              No KTP
+            <label className=" mb-3 pl-1  font-semibold text-gray-500 flex gap-1">
+              <p>No KTP </p>
+              <span className="text-red-500 text-xs">
+                {noKtp.length > 0 && <p className="">({0 + noKtp.length}/16)</p>}
+              </span>
             </label>
             <input
               type="text"
               inputMode="numeric"
               name="noKtp"
               maxLength="16"
-              placeholder="Masukkan No KTP"
+              placeholder="Masukkan 16 digit No KTP"
               value={noKtp}
               onChange={(e) => setNoKtp(e.target.value)}
               className="w-full p-2 border rounded-lg mb-8  pl-4 pr-4 focus:ring-2 focus:ring-muda focus:outline-none"
@@ -151,7 +155,14 @@ const FormDonor = () => {
             />
           </div>
 
-          <Button type="submit" text="Verifikasi KTP" loading={loading} />
+          <div className="-mt-4">
+            <Button
+              type="submit"
+              text="Verifikasi KTP"
+              disabled={noKtp.length !== 16}
+              loading={loading}
+            />
+          </div>
 
           <div className="flex items-center mb-6 pl-2 mt-4">
             <input

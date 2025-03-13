@@ -47,7 +47,6 @@ const FormRegister = () => {
     setMessage(null);
 
     try {
-
       await Register(formData);
 
       setMessage({ type: "success", text: "Registrasi berhasil!" });
@@ -80,8 +79,8 @@ const FormRegister = () => {
         Form Registrasi Pendonor
       </h2>
       <div className="flex justify-center mb-12">
-            <Icon w={"w-32 md:w-40 lg:w-40"} />
-          </div>
+        <Icon w={"w-32 md:w-40 lg:w-40"} />
+      </div>
 
       {message && (
         <div
@@ -106,8 +105,13 @@ const FormRegister = () => {
       <form onSubmit={handleSubmit}>
         <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-5">
           <div>
-            <label className="block pl-1  mb-2 font-semibold text-gray-500">
-              No KTP
+            <label className=" mb-3 pl-1  font-semibold text-gray-500 flex gap-1">
+              <p>No KTP </p>
+              <span className="text-red-500 text-xs">
+                {formData.no_ktp.length > 0 && (
+                  <p className="">({0 + formData.no_ktp.length}/16)</p>
+                )}
+              </span>
             </label>
             <input
               type="text"
